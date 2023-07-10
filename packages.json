@@ -1,0 +1,17 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "My project description",
+  "scripts": {
+    "build": "your-build-command",
+    "test": "your-test-command"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "your-dependency": "version"
+  },
+  "devDependencies": {
+    "your-dev-dependency": "version"
+  }
+}
