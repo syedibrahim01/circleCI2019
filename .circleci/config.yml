@@ -1,11 +1,29 @@
+# .circleci/config.yml
+
 version: 2.1
-workflows:
-  testing:
-    jobs:
-      - runner-test
 jobs:
-  runner-test:
-    machine: true
-    resource_class: syedibrahim/test1
+  build:
+    machine: windows-2019
     steps:
-      - run: echo "Hi I'm on Runners!"
+      - checkout
+
+      - run:
+          name: Install Node.js
+          command: |
+            choco install nodejs --version 14.17.3 -y
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - run:
+          name: Build project
+          command: npm run build
+
+      - run:
+          name: Run tests
+          command: npm test
+
+      - run:
+          name: Print "Hello, World!"
+          command: echo "Hello, World!"
